@@ -1,16 +1,29 @@
 /*----------------------------------------------
- * Author: 
- * Date: 
- * Description
+ * Author: Yupei Sun
+ * Date: Oct 4, 2024
+ * Description: This file contains the implementation of the `write_ppm` function,
+ * which writes pixel data to a binary PPM (P6) image file.
  ---------------------------------------------*/
-#include "write_ppm.h"
+
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include "write_ppm.h"
 
-// implement *one* (but do not remove the other one)!
+// Function to write pixel data to a binary PPM file
+void write_ppm(const char* filename, struct ppm_pixel* pxs, int width, int height) {
+    FILE* fp = fopen(filename, "wb");
+    if (!fp) {
+        printf("Error: could not open file %s\n", filename);
+        return;
+    }
 
-void write_ppm(const char* filename, struct ppm_pixel* pixels, int w, int h) {
+    // Write the header
+    fprintf(fp, "P6\n%d %d\n255\n", width, height);
 
+    // Write pixel data
+    fwrite(pxs, sizeof(struct ppm_pixel), width * height, fp);
+
+    fclose(fp);  // Close the file
 }
 
 void write_ppm_2d(const char* filename, struct ppm_pixel** pixels, int w, int h) {
