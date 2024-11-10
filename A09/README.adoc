@@ -4,6 +4,9 @@ Where did your run your tests? A laptop, or goldengate?
 
 What are the performance specifications of the machine: number and speed of
 processors, size of RAM? (use `lscpu` and `free -m`)
+Laptop (macOS)
+Performance specifications of the machine:
+- CPU: Apple M1 Pro
 
 = Single-process mandelbrot
 
@@ -13,12 +16,12 @@ the amount of time it takes to compute each image.
 [cols="1,1"]
 !===
 | Size | Time (s) 
-| 100 | todo
-| 400 | todo
-| 800 | todo
-| 1000 | todo
-| 2000 | todo
-!===
+| 100  | 0.027963
+| 400  | 0.358619
+| 800  | 1.409276
+| 1000 | 2.153337
+| 2000 | 8.535718
+|===
 
 = Multi-process mandelbrot
 
@@ -28,9 +31,9 @@ the amount of time it takes to compute each image.
 [cols="1,1"]
 !===
 | Size | Time (s) 
-| 100 | todo
-| 400 | todo
-| 800 | todo
-| 1000 | todo
-| 2000 | todo
+| 100  | 0.011172
+| 400  | 0.150486
+| 800  | 0.602387
+| 1000 | 0.938461
+| 2000 | 3.776202
 !===
